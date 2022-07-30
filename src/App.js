@@ -3,6 +3,7 @@ import './App.scss';
 import Messanger from './components/messanger/messanger.component';
 import MobileView from './components/mobile-view/mobile-view.component';
 import UserCluster from './components/user-cluster/user-cluster.component';
+import { MessagesProvider } from './contexts/messages.context';
 import { UserProvider } from './contexts/user.context';
 import { getWidth } from './utils/window/width';
 
@@ -13,7 +14,7 @@ function App() {
   useEffect(() => {
     const handleResize = (event) => {
       const width = getWidth();
-      setIsMobile(width <= 480);
+      setIsMobile(width <= 575);
     };
 
     window.addEventListener('resize', handleResize);
@@ -27,19 +28,25 @@ function App() {
     <div className="App">
       {isMobile ? 
         <div className='small-view'>
-          <UserProvider>
-            <MobileView users={users} />
-          </UserProvider>
+          <MessagesProvider>
+            <UserProvider>
+              <MobileView users={users} />
+            </UserProvider>
+          </MessagesProvider>
         </div> : 
         <div className='large-view'>
-          <UserProvider>
-            <Messanger 
-              userCluster={<UserCluster users={users} />}
-              currentUser={'jeffersbaxter'} />
-          </UserProvider>
-          <UserProvider>
-            <Messanger userCluster={<UserCluster users={users} />} currentUser={'johndoe'} />
-          </UserProvider>
+          <MessagesProvider>
+            <UserProvider>
+              <Messanger 
+                userCluster={<UserCluster users={users} />}
+                currentUser={'jeffersbaxter'} />
+            </UserProvider>
+          </MessagesProvider>
+          <MessagesProvider>
+            <UserProvider>
+              <Messanger userCluster={<UserCluster users={users} />} currentUser={'johndoe'} />
+            </UserProvider>
+          </MessagesProvider>
         </div>
       }
     </div>

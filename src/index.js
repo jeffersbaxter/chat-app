@@ -3,14 +3,14 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { MessagesProvider } from './contexts/messages.context';
+import { ChatProvider } from './contexts/chat.context';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <MessagesProvider>
+    <ChatProvider>
       <App />
-    </MessagesProvider>
+    </ChatProvider>
   </React.StrictMode>
 );
 

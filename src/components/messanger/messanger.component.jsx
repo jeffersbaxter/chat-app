@@ -10,6 +10,7 @@ const Messanger = ({ userCluster, currentUser }) => {
     const {messages} = useContext(MessagesContext);
     const {users} = useContext(UserContext);
 
+    // console.log(messages);
     return (
         <div className='messanger-container'>
             <ConvoNav 
