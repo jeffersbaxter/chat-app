@@ -1,0 +1,40 @@
+.message-container {
+    display: flex;
+    flex-direction: column;
+    padding: 5px 8px 5px;
+
+    & > .text-container {
+        border-radius: 3px;
+        padding: 8px;
+    }
+
+    .detail-bar {
+        line-height: 13px;
+        font-size: 10px;
+    }
+
+    .message-body {
+        display: flex;
+
+        & > .text-container {
+            border-radius: 3px;
+            padding: 8px;
+        }
+    }
+}
+
+.first-person {
+    align-items: end;
+
+    .text-container {
+        background-color: #30e34b;
+    }
+}
+
+.third-person {
+    align-items: start;
+
+    .text-container {
+        background-color: #535754;
+    }
+}

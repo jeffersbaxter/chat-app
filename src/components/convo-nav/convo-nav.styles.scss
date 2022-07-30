@@ -1,0 +1,12 @@
+.convo-nav-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #353836;
+    padding: 8px 0;
+
+    .user-count {
+        line-height: 13px;
+        font-size: 10px;
+    }
+}

@@ -1,0 +1,14 @@
+.mobile-nav {
+    display: flex;
+    flex-direction: row;
+    height: 55px;
+
+    .mobile-nav-tab {
+        width: 50%;
+        height: 100%;
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        cursor: pointer;
+    }
+}
