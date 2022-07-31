@@ -31,4 +31,5 @@ With more time I'd:
 * timestamps should work with different timezones and in general it could be refactored a bit
 * add reactions to messages between users, like emojis
 * add an ellipsis to show someone is typing
+* refactor for performance, memoize components that don't need rerendering
 
